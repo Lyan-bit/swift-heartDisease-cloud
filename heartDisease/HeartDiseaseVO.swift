@@ -1,7 +1,7 @@
 
 import Foundation
 
-class HeartDiseaseVO : Hashable, Identifiable, Decodable, Encodable {
+class HeartDiseaseVO : Identifiable, Decodable, Encodable {
 
   var id: String = ""
   var age: Int = 0
@@ -161,43 +161,5 @@ class HeartDiseaseVO : Hashable, Identifiable, Decodable, Encodable {
 	
   func setOutcome(x : String)
 	  { outcome = x }
-	  
-
-  static func == (lhs: HeartDiseaseVO, rhs: HeartDiseaseVO) -> Bool
-  { return
-      lhs.id == rhs.id &&
-      lhs.age == rhs.age &&
-      lhs.sex == rhs.sex &&
-      lhs.cp == rhs.cp &&
-      lhs.trestbps == rhs.trestbps &&
-      lhs.chol == rhs.chol &&
-      lhs.fbs == rhs.fbs &&
-      lhs.restecg == rhs.restecg &&
-      lhs.thalach == rhs.thalach &&
-      lhs.exang == rhs.exang &&
-      lhs.oldpeak == rhs.oldpeak &&
-      lhs.slope == rhs.slope &&
-      lhs.ca == rhs.ca &&
-      lhs.thal == rhs.thal &&
-      lhs.outcome == rhs.outcome
-  }
-
-  func hash(into hasher: inout Hasher) {
-    hasher.combine(id)
-    hasher.combine(age)
-    hasher.combine(sex)
-    hasher.combine(cp)
-    hasher.combine(trestbps)
-    hasher.combine(chol)
-    hasher.combine(fbs)
-    hasher.combine(restecg)
-    hasher.combine(thalach)
-    hasher.combine(exang)
-    hasher.combine(oldpeak)
-    hasher.combine(slope)
-    hasher.combine(ca)
-    hasher.combine(thal)
-    hasher.combine(outcome)
-  }
 
 }
